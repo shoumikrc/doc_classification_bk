@@ -15,13 +15,17 @@ The dataset provided represents the output of the OCR stage of the data pipeline
 
 The python notebook doc_classification_exploration.ipynb corresponds to the exploratory data analysis phase of the provided dataset and the benchmarking of different classification models. The objective is to understand the data and identify the best classification model to be deployed as a webservice. 
 
-### Conclusionfrom exploration phase: 
+### Conclusion from exploration phase: 
 
 #### Document category distribution
 
 ![](images/class_dist.png)
 
-Benchmarking
+#### Benchmarking
+
+The second histogram shows the comparison of average accuracy and average running time on train and test sets accross 5 fold cross validation. Each fold was created in a stratified manner keeping the original sample ratios for each category. A large difference between red and blue bars indicate possible overfitting of the model. After analyzing the results the LOGISTIC REGRESSION model with L2 regularization was selected to be deployed as a webservice for document classsification. It had the highest average test accuracy with good generalization.
+
+![](images/benchmark.png)
 
 Next based on the observations, LOGISTIC REGRESSION model with L2 regularization was selected to be deployed as a webservice for document classsification. It had the highest average test accuracy with good generalization. The notebook train_predict.ipynb trains a model and saves the trained model as a pickle file to be used later in the web deployement phase. The TF-IDF Vectorizer from the feature transformation phase is saved as vectorizer.pkl. This pickle files helps to load the learned TF_IDF matrix which shall be used to transform the query document during testing the document classifciation web tool.
 
