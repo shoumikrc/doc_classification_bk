@@ -63,7 +63,7 @@ The following screenshot demonstrate the working of the webservice:
 
 The input in the text field is a encoded document in the following format:
 
-586242498a88 21e314d3afcc 818a7ff3bf29 [...] 7498a1e9d9d7 6bf9c0cb01b4 6b1c8f75a7e2 c337a85b8ef9 f0666bdbc8a5 fbb5efbcc5b3 43565b1afa44 5f6653c869fc
+######  586242498a88 21e314d3afcc 818a7ff3bf29 [...] 7498a1e9d9d7 6bf9c0cb01b4 6b1c8f75a7e2 c337a85b8ef9 f0666bdbc8a5 fbb5efbcc5b3 43565b1afa44 5f6653c869fc
 
 The following series of test cases were used to verify the webservice functionality. These test cases were extracted from the original data and were not used for training the machine learning model.
 
