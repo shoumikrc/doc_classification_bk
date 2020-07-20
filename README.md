@@ -17,7 +17,9 @@ The python notebook doc_classification_exploration.ipynb corresponds to the expl
 
 ### Conclusionfrom exploration phase: 
 
-Document category distribution
+#### Document category distribution
+
+![](images/class_dist.png)
 
 Benchmarking
 
