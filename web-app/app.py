@@ -29,7 +29,7 @@ def handler(event, context):
         })
     }
 
-    s3client = boto3.client('s3',aws_access_key_id='AKIAWTQ6WBQSH5KUP4T2',aws_secret_access_key='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')
+    s3client = boto3.client('s3',aws_access_key_id='############',aws_secret_access_key='###########')
     model_obj = s3client.get_object(Bucket='doc-classification-model', Key='pretrained.pkl')
     vector_obj = s3client.get_object(Bucket='doc-classification-model', Key='vectorizer.pkl')
 
