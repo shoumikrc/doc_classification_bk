@@ -1,0 +1,3 @@
+Due to large size of the vectorize.pkl file, I could'nt upload it in github. Here I am pasting the google drive folder where it is uploaded.
+
+https://drive.google.com/drive/folders/1klAwAupPj_ePG2rZbd4tFFe63n8csaXg?usp=sharing
