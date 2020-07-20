@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <title>Document Classifier Service</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $(document).ajaxStart(function(){
+        $("#wait").css("display", "block");
+      });
+      $(document).ajaxComplete(function(){
+        $("#wait").css("display", "none");
+      });
+    });
+    </script>
+  </head>
+
+  <body>
+
+    <div class="container">
+        <div class="page-header">
+            <h4 class="display-4">Document Classification Tool</h4>
+        </div>
+        <div style="margin-top: 20px">
+            <p class="lead">Enter Words from Encoded Document</p>
+            <textarea class="form-control" id=words rows=10 cols=100></textarea>
+            <a href=# id=process_input><button class="btn btn-info btn-block" style="margin-top: 10px">Predict</button></a>
+            <div id="wait" style="display:none;width:100px;height:100px;"><br><h3>Loading...</h3></div>
+            <div id=result style="margin-top: 20px">
+                <h3 class="text-left" style="color: black" id=prediction></h3>
+                <h3 class="text-left" style="color: black" id=confidence></h3>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type=text/javascript>
+    			$(function() {
+    			  $('#process_input').bind('click', function() {
+    				$.post('https://0gjuteq48l.execute-api.us-east-2.amazonaws.com/prod', {
+    				  words: $('#words').val(),
+    				}, function(data) {
+    				  $("#prediction").text("Predicted Category: ".concat(data.prediction));
+    				  $("#confidence").text("Prediction Confidence: ".concat(data.confidence));
+    				});
+    				return false;
+    			  });
+    			});
+    		</script>
+      </div>
+
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    </body>
+</html>
