@@ -25,6 +25,8 @@ Next based on the observations, LOGISTIC REGRESSION model with L2 regularization
 
 To have an idea about the trained classification model's performance, the data was split to train/validation (90%/10%) using stratified sampling. The confusion matrix of the validation set is as follows.
 
+![](images/conf_matrix.png)
+
 
 ## Part 2 Web deployment phase
 
