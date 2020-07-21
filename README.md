@@ -29,11 +29,21 @@ The second histogram shows the comparison of average accuracy and average runnin
 
 Next based on the observations, LOGISTIC REGRESSION model with L2 regularization was selected to be deployed as a webservice for document classsification. It had the highest average test accuracy with good generalization. The notebook train_predict.ipynb trains a model and saves the trained model as a pickle file to be used later in the web deployement phase. The TF-IDF Vectorizer from the feature transformation phase is saved as vectorizer.pkl. This pickle files helps to load the learned TF_IDF matrix which shall be used to transform the query document during testing the document classifciation web tool.
 
-To have an idea about the trained classification model's performance, the data was split to train/validation (90%/10%) using stratified sampling as the distribution of classes is unbalanced. The confusion matrix of the validation set is as follows.
+To have an idea about the trained classification model's performance, the data was split to train/validation (90%/10%) using stratified sampling as the distribution of classes is unbalanced. The Micro F1 score for the training and validation sets are: 
+
+#### F1 score for training set: 0.8886
+#### F1 score for test set:0.8666
+
+The confusion matrix of the validation set is as follows.
 
 
 ![](images/conf_mat.png)
 
+#### TF-IDF features
+
+The features used in this project are TF-IDF features. The TF-IDF vectorization of a corpus of text documents assigns each word in a document a number that is proportional to its frequency in the document and inversely proportional to the number of documents in which it occurs. Very common words, such as “a” or “the”, thereby receive heavily discounted tf-idf scores, in contrast to words that are very specific to the document in question. The result is a matrix of tf-idf scores with one row per document and as many columns as there are different words in the dataset. In this project, since the words are encoded it will be difficult to understand how to associate different words to specific categories of documents. However, if there is a way to map the encoded strings back to English language then the following figures can be used to show the mean TF-IDF score for the top 25 features for each document category
+
+![](images/feature.png)
 
 ## Part 2 Web deployment phase
 
